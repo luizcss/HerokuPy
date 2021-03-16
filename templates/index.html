@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>python na veia</title>
+    <title>W3.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+    <style>
+        .mySlides {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-   <h1>python na veia</h1>
+    <h2>Automatic Slideshow</h2>
+    <div style="max-width:500px">
+        <img class="mySlides" src="../static/images/estudando.png">
+        <img class="mySlides" src="../static/images/duke_cafe.png">
+        <img class="mySlides" src="../static/images/duke.png">
+    </div>
+    <script>
+        var myIndex = 0;
+        carousel();
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 10000); // Change image every 2 seconds
+        }
+    </script>
 </body>
+
 </html>
